@@ -32,7 +32,7 @@ class usermanager:
 
         password = "securepassword" # presumably there will be some password generation logic
 
-        if not self.store.storeaccount(username, password): return False
+        status = self.store.storeaccount(username, password)
 
         self.logger.log("new user " + username + "added")
         return password
@@ -89,6 +89,4 @@ class TestUsermanager(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
 
